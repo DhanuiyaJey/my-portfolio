@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 const Hero = () => {
   // Using the client's profile image.
-  const userImageUrl = "/profile.png";
+  const userImageUrl = `${import.meta.env.BASE_URL}profile.png`;
 
   return (
     <section className="relative w-full h-screen mx-auto overflow-hidden bg-black">
