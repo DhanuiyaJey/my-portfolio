@@ -1,6 +1,5 @@
 import {
   NavLink,
-  Service,
   Technology,
   Experience,
   Project,
@@ -15,120 +14,85 @@ export const navLinks: NavLink[] = [
   { id: "contact", title: "Contact" },
 ];
 
-export const services: Service[] = [
-  { title: "Web Developer", icon: "https://picsum.photos/seed/web/200/200" },
-  { title: "React Native Developer", icon: "https://picsum.photos/seed/mobile/200/200" },
-  { title: "Backend Developer", icon: "https://picsum.photos/seed/backend/200/200" },
-  { title: "Content Creator", icon: "https://picsum.photos/seed/creator/200/200" },
-];
-
 export const technologies: Technology[] = [
-  { name: "HTML 5", icon: "https://picsum.photos/seed/html/100/100" },
-  { name: "CSS 3", icon: "https://picsum.photos/seed/css/100/100" },
-  { name: "JavaScript", icon: "https://picsum.photos/seed/js/100/100" },
-  { name: "TypeScript", icon: "https://picsum.photos/seed/ts/100/100" },
-  { name: "React JS", icon: "https://picsum.photos/seed/react/100/100" },
-  { name: "Redux Toolkit", icon: "https://picsum.photos/seed/redux/100/100" },
-  { name: "Tailwind CSS", icon: "https://picsum.photos/seed/tailwind/100/100" },
-  { name: "Node JS", icon: "https://picsum.photos/seed/node/100/100" },
-  { name: "MongoDB", icon: "https://picsum.photos/seed/mongodb/100/100" },
-  { name: "Three JS", icon: "https://picsum.photos/seed/threejs/100/100" },
-  { name: "git", icon: "https://picsum.photos/seed/git/100/100" },
-  { name: "figma", icon: "https://picsum.photos/seed/figma/100/100" },
-  { name: "docker", icon: "https://picsum.photos/seed/docker/100/100" },
+  { name: "Java", icon: "https://picsum.photos/seed/java/100/100" },
+  { name: "C", icon: "https://picsum.photos/seed/c/100/100" },
+  { name: "DBMS", icon: "https://picsum.photos/seed/dbms/100/100" },
+  { name: "Networking", icon: "https://picsum.photos/seed/network/100/100" },
+  { name: "Web Dev", icon: "https://picsum.photos/seed/webdev/100/100" },
+  { name: "MS Office", icon: "https://picsum.photos/seed/msoffice/100/100" },
 ];
 
 export const experiences: Experience[] = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: "https://picsum.photos/seed/starbucks/100/100",
+    title: "BICT (Reading)",
+    company_name: "University of Ruhuna",
+    icon: "https://picsum.photos/seed/ruhuna/100/100",
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Currently pursuing Bachelor of Information and Communication Technology.",
+      "Developing a strong foundation in computer science and information technology.",
+      "Engaging in various academic projects and problem-solving challenges.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: "https://picsum.photos/seed/tesla/100/100",
+    title: "Diploma of IT",
+    company_name: "Esoft - Hatton",
+    icon: "https://picsum.photos/seed/esoft/100/100",
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Jan 2019 - June 2019",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: "https://picsum.photos/seed/shopify/100/100",
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: "https://picsum.photos/seed/meta/100/100",
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Completed a comprehensive Diploma in Information Technology.",
+      "Gained hands-on experience with basic IT concepts and tools.",
     ],
   },
 ];
 
 export const projects: Project[] = [
   {
-    name: "Car Rent",
+    name: "Saga Elite Web Project",
     description:
-      "Web-based platform that allows users to search, book, and rent cars from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A collaborative web development project showcasing advanced web technologies and design principles.",
     tags: [
-      { name: "react", color: "blue-text-gradient" },
-      { name: "mongodb", color: "green-text-gradient" },
-      { name: "tailwind", color: "pink-text-gradient" },
+      { name: "web", color: "blue-text-gradient" },
+      { name: "collaboration", color: "green-text-gradient" },
     ],
-    image: "https://picsum.photos/seed/carrent/600/400",
-    source_code_link: "https://github.com/",
+    image: "https://picsum.photos/seed/saga/600/400",
+    source_code_link: "https://github.com/HajithMohamed/Saga-Elite-Web-project",
   },
   {
-    name: "Job IT",
+    name: "Mini Project Java",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "A Java-based application demonstrating core programming concepts and software development lifecycle.",
     tags: [
-      { name: "react", color: "blue-text-gradient" },
-      { name: "restapi", color: "green-text-gradient" },
-      { name: "scss", color: "pink-text-gradient" },
+      { name: "java", color: "blue-text-gradient" },
+      { name: "oop", color: "green-text-gradient" },
     ],
-    image: "https://picsum.photos/seed/jobit/600/400",
-    source_code_link: "https://github.com/",
+    image: "https://picsum.photos/seed/javaproject/600/400",
+    source_code_link: "https://github.com/ishanairshaff/mini-project-java",
   },
   {
-    name: "Trip Guide",
+    name: "E-commerce Platform",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "An e-commerce web application with features for product browsing and management.",
     tags: [
-      { name: "nextjs", color: "blue-text-gradient" },
-      { name: "supabase", color: "green-text-gradient" },
-      { name: "css", color: "pink-text-gradient" },
+      { name: "ecommerce", color: "blue-text-gradient" },
+      { name: "web", color: "green-text-gradient" },
     ],
-    image: "https://picsum.photos/seed/tripguide/600/400",
-    source_code_link: "https://github.com/",
+    image: "https://picsum.photos/seed/ecommerce/600/400",
+    source_code_link: "https://github.com/Dineshs737/e-commerce",
+  },
+  {
+    name: "Database Project",
+    description:
+      "A group project focused on database management systems and data architecture.",
+    tags: [
+      { name: "dbms", color: "blue-text-gradient" },
+      { name: "sql", color: "green-text-gradient" },
+    ],
+    image: "https://picsum.photos/seed/database/600/400",
+    source_code_link: "https://github.com/Maheesha22/Database-group-3",
   },
 ];
 

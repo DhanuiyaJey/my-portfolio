@@ -8,6 +8,7 @@ import Experience from "./components/sections/Experience";
 import Skills from "./components/sections/Skills";
 import Projects from "./components/sections/Projects";
 import Blog from "./components/sections/Blog";
+import AdditionalInfo from "./components/sections/AdditionalInfo";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/layout/Footer";
 import StarsCanvas from "./components/canvas/StarsCanvas";
@@ -24,6 +25,7 @@ export default function App() {
         <Experience />
         <Skills />
         <Projects />
+        <AdditionalInfo />
         <Blog />
         <div className="relative z-0">
           <Contact />

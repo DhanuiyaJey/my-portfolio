@@ -1,22 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #050816;
-  --color-secondary: #aaa6c3;
-  --color-tertiary: #151030;
-  --color-black-100: #100d25;
-  --color-black-200: #090325;
-  --color-white-100: #f3f3f3;
-  --color-background: #050816;
-  --color-surface: #151030;
-  --color-border: #1d1836;
+  --color-primary: #000000;
+  --color-secondary: #D1D1D1;
+  --color-tertiary: #111111;
+  --color-black-100: #0a0a0a;
+  --color-black-200: #050505;
+  --color-white-100: #ffffff;
+  --color-background: #000000;
+  --color-surface: #0a0a0a;
+  --color-border: #222222;
   --color-text-primary: #ffffff;
-  --color-text-secondary: #aaa6c3;
+  --color-text-secondary: #D1D1D1;
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --shadow-card: -1px 4px 20px -6px rgba(0, 0, 0, 0.75);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 @layer base {
@@ -93,6 +93,13 @@
     background: linear-gradient(to top, #ec008c, #fc6767);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .bg-hero-pattern {
+    background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   /* Canvas loader */

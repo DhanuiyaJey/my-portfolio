@@ -1,44 +1,48 @@
 import { motion } from "motion/react";
-import { Suspense, lazy } from "react";
-import { Canvas } from "@react-three/fiber";
-
-import CanvasLoader from "../canvas/CanvasLoader";
-
-const ParticleField = lazy(() => import("../canvas/ParticleField"));
 
 const Hero = () => {
+  // Using the client's profile image.
+  const userImageUrl = "/profile.png";
+
   return (
-    <section className="relative w-full h-screen mx-auto overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-          <Suspense fallback={<CanvasLoader />}>
-            <ParticleField count={2000} />
-          </Suspense>
-        </Canvas>
+    <section className="relative w-full h-screen mx-auto overflow-hidden bg-black">
+      {/* Top Right Triangle */}
+      <div 
+        className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-[#D1D1D1] z-0"
+        style={{ clipPath: "polygon(100% 0, 100% 100%, 0 0)" }}
+      />
+
+      {/* Bottom Left Triangle */}
+      <div 
+        className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-[#D1D1D1] z-0"
+        style={{ clipPath: "polygon(0 0, 0 100%, 100% 100%)" }}
+      />
+
+      {/* Main Profile Image */}
+      <div className="absolute inset-0 flex items-center justify-center z-10">
+        <img 
+          src={userImageUrl} 
+          alt="Profile" 
+          className="h-[85%] object-contain"
+          style={{
+            maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)"
+          }}
+          referrerPolicy="no-referrer"
+        />
       </div>
 
-      <div
-        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto sm:px-16 px-6 flex flex-row items-start gap-5 z-10`}
-      >
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#915eff]" />
-          <div className="w-1 sm:h-80 h-40 violet-gradient" />
-        </div>
-
-        <div>
-          <h1 className={`font-black text-white lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2`}>
-            Hi, I'm <span className="text-[#915eff]">Kavindya</span>
-          </h1>
-          <p className={`text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] mt-2`}>
-            I develop 3D visuals, user <br className="sm:block hidden" />
-            interfaces and web applications
-          </p>
-        </div>
+      {/* Bottom Left Name (Reference Style) */}
+      <div className="absolute bottom-12 left-12 z-20">
+        <h2 className="text-black text-4xl font-light tracking-tight">
+          <span className="font-bold">Jeyaraj</span> Dhanushiya
+        </h2>
       </div>
 
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-10">
+      {/* Scroll Indicator (Optional, but keeping for UX) */}
+      <div className="absolute bottom-10 right-12 z-20">
         <a href="#about">
-          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
+          <div className="w-[35px] h-[64px] rounded-3xl border-2 border-white/20 flex justify-center items-start p-2">
             <motion.div
               animate={{
                 y: [0, 24, 0],
@@ -48,7 +52,7 @@ const Hero = () => {
                 repeat: Infinity,
                 repeatType: "loop",
               }}
-              className="w-3 h-3 rounded-full bg-secondary mb-1"
+              className="w-3 h-3 rounded-full bg-white/40 mb-1"
             />
           </div>
         </a>
