@@ -2,6 +2,8 @@
 
 A complete, production-ready 3D animated portfolio website for a creative software developer.
 
+![alt text](docs/image.png)
+
 ## 🛠️ Tech Stack
 
 - **Framework:** React 18+ with TypeScript
