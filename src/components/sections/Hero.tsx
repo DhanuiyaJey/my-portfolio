@@ -39,24 +39,38 @@ const Hero = () => {
         </h2>
       </div>
 
-      {/* Scroll Indicator (Optional, but keeping for UX) */}
-      <div className="absolute bottom-10 right-12 z-20">
-        <a href="#about">
-          <div className="w-[35px] h-[64px] rounded-3xl border-2 border-white/20 flex justify-center items-start p-2">
+      {/* Scroll Indicator — geometric cascading triangles */}
+      <a href="#about" className="absolute bottom-8 right-12 z-20 group flex flex-col items-center gap-1">
+        <span className="text-[10px] uppercase tracking-[0.3em] text-white/30 group-hover:text-white/60 transition-colors duration-500 mb-2"
+          style={{ writingMode: "vertical-rl" }}
+        >
+          Scroll
+        </span>
+        <div className="flex flex-col items-center gap-[2px]">
+          {[0, 1, 2].map((i) => (
             <motion.div
+              key={i}
               animate={{
-                y: [0, 24, 0],
+                opacity: [0.15, 0.8, 0.15],
+                y: [0, 4, 0],
               }}
               transition={{
-                duration: 1.5,
+                duration: 1.6,
                 repeat: Infinity,
-                repeatType: "loop",
+                delay: i * 0.25,
+                ease: "easeInOut",
               }}
-              className="w-3 h-3 rounded-full bg-white/40 mb-1"
+              className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-white/50 group-hover:border-t-white/80 transition-colors duration-500"
             />
-          </div>
-        </a>
-      </div>
+          ))}
+        </div>
+        {/* Thin trailing line */}
+        <motion.div
+          animate={{ scaleY: [0.3, 1, 0.3] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+          className="w-[1px] h-6 bg-gradient-to-b from-white/30 to-transparent origin-top mt-1"
+        />
+      </a>
     </section>
   );
 };
