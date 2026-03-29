@@ -2,7 +2,8 @@
 
 A complete, production-ready 3D animated portfolio website for a creative software developer.
 
-![alt text](docs/image.png)
+<img width="2539" height="1344" alt="image" src="https://github.com/user-attachments/assets/936ad3a0-5842-4c85-8214-d53d19ff31a7" />
+
 
 ## 🛠️ Tech Stack
 
