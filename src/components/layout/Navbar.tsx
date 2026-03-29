@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { navLinks } from "../../constants";
 import { Menu, X } from "lucide-react";
 
@@ -40,8 +39,8 @@ const Navbar = () => {
     >
       <div className="w-full flex justify-between items-center max-w-[1800px] mx-auto text-white text-sm font-light">
         {/* Left: Greeting/Name */}
-        <Link
-          to="/"
+        <a
+          href="#"
           className="flex items-center gap-2"
           onClick={() => {
             setActive("");
@@ -51,7 +50,7 @@ const Navbar = () => {
           <p className="opacity-60 hover:opacity-100 transition-opacity">
             {scrolled ? "Dhanushiya" : greeting}
           </p>
-        </Link>
+        </a>
 
         {/* Center: Socials (Reference Style) */}
         <div className="hidden md:flex gap-4 items-center">
@@ -114,6 +113,11 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
+            <div className="border-t border-white/10 mt-4 pt-4 flex gap-4">
+              <a href="https://www.linkedin.com/in/jeyaraj-dhanushiya-408969297" target="_blank" rel="noreferrer" className="text-white/60 hover:text-white text-sm transition-colors">LinkedIn</a>
+              <a href="https://github.com/DhanuiyaJey" target="_blank" rel="noreferrer" className="text-white/60 hover:text-white text-sm transition-colors">GitHub</a>
+              <a href="mailto:premalathadhanushiya@gmail.com" className="text-white/60 hover:text-white text-sm transition-colors">Email</a>
+            </div>
           </div>
         </div>
       </div>

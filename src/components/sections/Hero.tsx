@@ -2,27 +2,36 @@ import { motion } from "motion/react";
 
 const Hero = () => {
   // Using the client's profile image.
-  const userImageUrl = `${import.meta.env.BASE_URL}profile.png`;
+  const userImageUrl = `${import.meta.env.BASE_URL}profile.webp`;
 
   return (
     <section className="relative w-full h-screen mx-auto overflow-hidden bg-black">
       {/* Top Right Triangle */}
-      <div 
+      <motion.div
+        initial={{ opacity: 0, x: 80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-[#D1D1D1] z-0"
         style={{ clipPath: "polygon(100% 0, 100% 100%, 0 0)" }}
       />
 
       {/* Bottom Left Triangle */}
-      <div 
+      <motion.div
+        initial={{ opacity: 0, x: -80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-[#D1D1D1] z-0"
         style={{ clipPath: "polygon(0 0, 0 100%, 100% 100%)" }}
       />
 
       {/* Main Profile Image */}
       <div className="absolute inset-0 flex items-center justify-center z-10">
-        <img 
-          src={userImageUrl} 
-          alt="Profile" 
+        <motion.img
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+          src={userImageUrl}
+          alt="Profile"
           className="h-[85%] object-contain"
           style={{
             maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)",
@@ -34,9 +43,22 @@ const Hero = () => {
 
       {/* Bottom Left Name (Reference Style) */}
       <div className="absolute bottom-12 left-12 z-20">
-        <h2 className="text-black text-4xl font-light tracking-tight">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+          className="text-black text-4xl font-light tracking-tight"
+        >
           <span className="font-bold">Jeyaraj</span> Dhanushiya
-        </h2>
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8, ease: "easeOut" }}
+          className="text-sm uppercase tracking-[0.3em] text-black/60 font-light mt-2"
+        >
+          BICT Undergraduate | Web Developer
+        </motion.p>
       </div>
 
       {/* Scroll Indicator — geometric cascading triangles */}

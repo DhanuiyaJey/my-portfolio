@@ -67,7 +67,7 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-1 bg-[#0a0a0a] border border-white/10 p-10"
       >
-        <p className="text-secondary text-sm uppercase tracking-[0.2em] font-light mb-2">08 / Connection</p>
+        <p className="text-secondary text-sm uppercase tracking-[0.2em] font-light mb-2">06 / Connection</p>
         <h2 className="text-white text-5xl md:text-7xl font-light tracking-tight mb-12">
           <span className="font-bold">Contact</span>.
         </h2>

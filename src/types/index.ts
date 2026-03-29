@@ -3,19 +3,9 @@ export interface NavLink {
   title: string;
 }
 
-export interface Service {
-  title: string;
-  icon: string;
-}
-
 export interface Skill {
   name: string;
   category: "technical" | "interpersonal";
-}
-
-export interface Technology {
-  name: string;
-  icon: string;
 }
 
 export interface Experience {

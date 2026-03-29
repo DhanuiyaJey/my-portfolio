@@ -1,7 +1,6 @@
 import {
   NavLink,
   Skill,
-  Technology,
   Experience,
   Project,
 } from "../types";
@@ -27,15 +26,6 @@ export const skills: Skill[] = [
   { name: "Time Management", category: "interpersonal" },
   { name: "Adaptability", category: "interpersonal" },
   { name: "Quick Learning", category: "interpersonal" },
-];
-
-export const technologies: Technology[] = [
-  { name: "Java", icon: "https://picsum.photos/seed/java/100/100" },
-  { name: "C", icon: "https://picsum.photos/seed/c/100/100" },
-  { name: "DBMS", icon: "https://picsum.photos/seed/dbms/100/100" },
-  { name: "Networking", icon: "https://picsum.photos/seed/network/100/100" },
-  { name: "Web Dev", icon: "https://picsum.photos/seed/webdev/100/100" },
-  { name: "MS Office", icon: "https://picsum.photos/seed/msoffice/100/100" },
 ];
 
 export const experiences: Experience[] = [

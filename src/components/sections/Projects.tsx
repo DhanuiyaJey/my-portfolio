@@ -16,6 +16,22 @@ function useContributors(repoUrl: string) {
     if (!match) return;
 
     const [, owner, repo] = match;
+    const cacheKey = `contributors-${owner}/${repo}`;
+    const ONE_HOUR = 60 * 60 * 1000;
+
+    // Check localStorage cache first
+    try {
+      const cached = localStorage.getItem(cacheKey);
+      if (cached) {
+        const { data, timestamp } = JSON.parse(cached);
+        if (Date.now() - timestamp < ONE_HOUR) {
+          setContributors(data);
+          return;
+        }
+      }
+    } catch {
+      // Ignore parse errors, proceed to fetch
+    }
 
     fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`)
       .then((res) => {
@@ -24,13 +40,20 @@ function useContributors(repoUrl: string) {
       })
       .then((data: any[]) => {
         if (!Array.isArray(data)) return;
-        setContributors(
-          data.map((c) => ({
-            login: c.login,
-            avatar_url: c.avatar_url,
-            html_url: c.html_url,
-          }))
-        );
+        const mapped = data.map((c) => ({
+          login: c.login,
+          avatar_url: c.avatar_url,
+          html_url: c.html_url,
+        }));
+        setContributors(mapped);
+        try {
+          localStorage.setItem(
+            cacheKey,
+            JSON.stringify({ data: mapped, timestamp: Date.now() })
+          );
+        } catch {
+          // Ignore storage errors
+        }
       })
       .catch(() => {});
   }, [repoUrl]);
@@ -66,7 +89,7 @@ const ProjectCard = ({
       <div className="relative w-full h-[230px] overflow-hidden">
         <img
           src={image}
-          alt="project_image"
+          alt={name}
           className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
           referrerPolicy="no-referrer"
         />
@@ -74,6 +97,9 @@ const ProjectCard = ({
         <div className="absolute inset-0 flex justify-end m-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div
             onClick={() => window.open(source_code_link, "_blank")}
+            role="button"
+            tabIndex={0}
+            aria-label="View source code"
             className="bg-black/80 w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:bg-white hover:text-black transition-all"
           >
             <Github className="w-1/2 h-1/2 object-contain" />
