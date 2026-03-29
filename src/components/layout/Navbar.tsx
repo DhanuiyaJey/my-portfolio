@@ -57,11 +57,11 @@ const Navbar = () => {
         <div className="hidden md:flex gap-4 items-center">
           <span className="font-bold">Socials</span>
           <span className="opacity-40">/</span>
-          <a href="https://www.linkedin.com/in/jeyaraj-dhanushiya-408969297" target="_blank" className="opacity-60 hover:opacity-100 transition-opacity">li</a>
+          <a href="https://www.linkedin.com/in/jeyaraj-dhanushiya-408969297" target="_blank" rel="noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">LinkedIn</a>
           <span className="opacity-40">/</span>
-          <a href="#" className="opacity-60 hover:opacity-100 transition-opacity">dr</a>
+          <a href="https://github.com/DhanuiyaJey" target="_blank" rel="noreferrer" className="opacity-60 hover:opacity-100 transition-opacity">GitHub</a>
           <span className="opacity-40">/</span>
-          <a href="#" className="opacity-60 hover:opacity-100 transition-opacity">tw</a>
+          <a href="mailto:premalathadhanushiya@gmail.com" className="opacity-60 hover:opacity-100 transition-opacity">Email</a>
         </div>
 
         {/* Right: Navigation (Reference Style) */}

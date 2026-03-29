@@ -1,9 +1,42 @@
 import { motion } from "motion/react";
 import { Github } from "lucide-react";
+import { useState, useEffect } from "react";
 
 import { projects } from "../../constants";
+import type { Collaborator } from "../../types";
 import { fadeIn, textVariant } from "../../utils/motion";
 import SectionWrapper from "../../hoc/SectionWrapper";
+
+function useContributors(repoUrl: string) {
+  const [contributors, setContributors] = useState<Collaborator[]>([]);
+
+  useEffect(() => {
+    // Extract owner/repo from "https://github.com/owner/repo"
+    const match = repoUrl.match(/github\.com\/([^/]+)\/([^/]+)/);
+    if (!match) return;
+
+    const [, owner, repo] = match;
+
+    fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`)
+      .then((res) => {
+        if (!res.ok) return [];
+        return res.json();
+      })
+      .then((data: any[]) => {
+        if (!Array.isArray(data)) return;
+        setContributors(
+          data.map((c) => ({
+            login: c.login,
+            avatar_url: c.avatar_url,
+            html_url: c.html_url,
+          }))
+        );
+      })
+      .catch(() => {});
+  }, [repoUrl]);
+
+  return contributors;
+}
 
 const ProjectCard = ({
   index,
@@ -20,6 +53,8 @@ const ProjectCard = ({
   image: string;
   source_code_link: string;
 }) => {
+  const collaborators = useContributors(source_code_link);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -57,6 +92,31 @@ const ProjectCard = ({
             </span>
           ))}
         </div>
+
+        {collaborators.length > 0 && (
+          <div className="mt-5 flex items-center gap-3">
+            <span className="text-[10px] text-white/30 uppercase tracking-widest">Team</span>
+            <div className="flex -space-x-2">
+              {collaborators.map((c) => (
+                <a
+                  key={c.login}
+                  href={c.html_url}
+                  target="_blank"
+                  rel="noreferrer"
+                  title={c.login}
+                  className="relative block w-8 h-8 rounded-full border-2 border-[#0a0a0a] overflow-hidden hover:z-10 hover:scale-110 transition-transform"
+                >
+                  <img
+                    src={c.avatar_url}
+                    alt={c.login}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </motion.div>
   );

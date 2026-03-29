@@ -1,9 +1,9 @@
 import {
   NavLink,
+  Skill,
   Technology,
   Experience,
   Project,
-  BlogPost,
 } from "../types";
 
 export const navLinks: NavLink[] = [
@@ -12,6 +12,21 @@ export const navLinks: NavLink[] = [
   { id: "skills", title: "Skills" },
   { id: "projects", title: "Projects" },
   { id: "contact", title: "Contact" },
+];
+
+export const skills: Skill[] = [
+  { name: "Java", category: "technical" },
+  { name: "C", category: "technical" },
+  { name: "Web Development", category: "technical" },
+  { name: "DBMS", category: "technical" },
+  { name: "Networking", category: "technical" },
+  { name: "Microsoft Office", category: "technical" },
+  { name: "Problem Solving", category: "interpersonal" },
+  { name: "Teamwork", category: "interpersonal" },
+  { name: "Communication", category: "interpersonal" },
+  { name: "Time Management", category: "interpersonal" },
+  { name: "Adaptability", category: "interpersonal" },
+  { name: "Quick Learning", category: "interpersonal" },
 ];
 
 export const technologies: Technology[] = [
@@ -27,8 +42,7 @@ export const experiences: Experience[] = [
   {
     title: "BICT (Reading)",
     company_name: "University of Ruhuna",
-    icon: "https://picsum.photos/seed/ruhuna/100/100",
-    iconBg: "#383E56",
+    iconLabel: "UoR",
     date: "Present",
     points: [
       "Currently pursuing Bachelor of Information and Communication Technology.",
@@ -39,8 +53,7 @@ export const experiences: Experience[] = [
   {
     title: "Diploma of IT",
     company_name: "Esoft - Hatton",
-    icon: "https://picsum.photos/seed/esoft/100/100",
-    iconBg: "#E6DEDD",
+    iconLabel: "ESoft",
     date: "Jan 2019 - June 2019",
     points: [
       "Completed a comprehensive Diploma in Information Technology.",
@@ -93,32 +106,5 @@ export const projects: Project[] = [
     ],
     image: "https://picsum.photos/seed/database/600/400",
     source_code_link: "https://github.com/Maheesha22/Database-group-3",
-  },
-];
-
-export const blogPosts: BlogPost[] = [
-  {
-    title: "Mastering Three.js in React",
-    date: "Oct 12, 2025",
-    readTime: "5 min read",
-    excerpt: "Learn how to integrate complex 3D scenes into your React applications using React Three Fiber.",
-    image: "https://picsum.photos/seed/blog1/600/400",
-    link: "#",
-  },
-  {
-    title: "The Future of Web Animation",
-    date: "Nov 05, 2025",
-    readTime: "8 min read",
-    excerpt: "Exploring the latest trends in web animation, from Framer Motion to GSAP and beyond.",
-    image: "https://picsum.photos/seed/blog2/600/400",
-    link: "#",
-  },
-  {
-    title: "Building Scalable Microservices",
-    date: "Dec 20, 2025",
-    readTime: "12 min read",
-    excerpt: "A deep dive into architecting robust and scalable microservices using Node.js and Docker.",
-    image: "https://picsum.photos/seed/blog3/600/400",
-    link: "#",
   },
 ];

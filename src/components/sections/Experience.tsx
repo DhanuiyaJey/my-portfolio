@@ -23,18 +23,15 @@ const ExperienceCard = ({ experience }: { experience: any }) => {
       }}
       contentArrowStyle={{ borderRight: "7px solid rgba(255, 255, 255, 0.1)" }}
       date={experience.date}
-      iconStyle={{ 
-        background: "#000", 
-        boxShadow: "0 0 0 4px #D1D1D1, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05)" 
+      iconStyle={{
+        background: "linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)",
+        boxShadow: "0 0 0 2px rgba(255,255,255,0.2), 0 0 20px rgba(255,255,255,0.05)",
       }}
       icon={
         <div className="flex justify-center items-center w-full h-full">
-          <img
-            src={experience.icon}
-            alt={experience.company_name}
-            className="w-[60%] h-[60%] object-contain grayscale invert"
-            referrerPolicy="no-referrer"
-          />
+          <span className="text-white text-[11px] font-bold tracking-wider uppercase leading-none text-center">
+            {experience.iconLabel}
+          </span>
         </div>
       }
     >

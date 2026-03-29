@@ -8,6 +8,11 @@ export interface Service {
   icon: string;
 }
 
+export interface Skill {
+  name: string;
+  category: "technical" | "interpersonal";
+}
+
 export interface Technology {
   name: string;
   icon: string;
@@ -16,10 +21,15 @@ export interface Technology {
 export interface Experience {
   title: string;
   company_name: string;
-  icon: string;
-  iconBg: string;
+  iconLabel: string;
   date: string;
   points: string[];
+}
+
+export interface Collaborator {
+  login: string;
+  avatar_url: string;
+  html_url: string;
 }
 
 export interface Project {
@@ -32,13 +42,4 @@ export interface Project {
   image: string;
   source_code_link: string;
   live_demo_link?: string;
-}
-
-export interface BlogPost {
-  title: string;
-  date: string;
-  readTime: string;
-  excerpt: string;
-  image: string;
-  link: string;
 }
